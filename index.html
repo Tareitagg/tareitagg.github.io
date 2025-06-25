@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DPCCrea - Hacker Pro</title>
     <style>
-        /* === ESTILOS HACKER (¡MEJORADOS!) === */
+        /* === ESTILOS HACKER ÉPICOS === */
         :root {
             --hacker-green: #00ff41;
             --dark-color: #000;
-            --menu-color: #121212;
         }
         
         * {
@@ -25,7 +24,7 @@
             overflow-x: hidden;
         }
         
-        /* === PANTALLA DE CARGA (¡ÉPICA!) === */
+        /* === PANTALLA DE CARGA (¡LA QUE AMAS!) === */
         .loader {
             position: fixed;
             top: 0;
@@ -42,16 +41,16 @@
         
         .loader-text {
             color: var(--hacker-green);
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin: 20px 0;
-            text-shadow: 0 0 10px var(--hacker-green);
+            text-shadow: 0 0 15px var(--hacker-green);
             position: relative;
         }
         
         .loader-text::after {
             content: "|";
             position: absolute;
-            right: -10px;
+            right: -15px;
             animation: blink 0.7s infinite;
         }
         
@@ -60,7 +59,15 @@
             50% { opacity: 1; }
         }
         
-        /* === FONDO MATRIX (¡LLUVIA DE LETRAS JAPONESAS!) === */
+        .binary-code {
+            color: var(--hacker-green);
+            font-size: 1.2rem;
+            opacity: 0.8;
+            text-align: center;
+            line-height: 1.5;
+        }
+        
+        /* === FONDO MATRIX (¡CON LLUVIA DE LETRAS JAPONESAS!) === */
         .matrix-bg {
             position: fixed;
             top: 0;
@@ -68,14 +75,14 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.15;
+            opacity: 0.2;
         }
         
-        /* === MENÚ HAMBURGUESA (¡BONITO!) === */
+        /* === MENÚ HAMBURGUESA (¡BONITO Y FUNCIONAL!) === */
         .hamburger {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 25px;
+            right: 25px;
             width: 60px;
             height: 60px;
             background: var(--hacker-green);
@@ -86,7 +93,12 @@
             align-items: center;
             cursor: pointer;
             z-index: 1000;
-            box-shadow: 0 0 15px var(--hacker-green);
+            box-shadow: 0 0 20px var(--hacker-green);
+            transition: transform 0.3s;
+        }
+        
+        .hamburger:hover {
+            transform: rotate(180deg);
         }
         
         .hamburger div {
@@ -97,17 +109,17 @@
             transition: all 0.3s;
         }
         
-        /* Menú desplegable (estilo hacker) */
+        /* Menú desplegable */
         nav {
             position: fixed;
             top: 0;
-            right: -320px;
-            width: 320px;
+            right: -350px;
+            width: 350px;
             height: 100vh;
-            background: var(--menu-color);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 999;
-            transition: right 0.4s;
-            border-left: 3px solid var(--hacker-green);
+            transition: right 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            border-left: 4px solid var(--hacker-green);
             padding-top: 100px;
         }
         
@@ -123,132 +135,173 @@
             color: var(--hacker-green);
             text-decoration: none;
             display: block;
-            padding: 15px 30px;
-            font-size: 1.2rem;
+            padding: 18px 35px;
+            font-size: 1.3rem;
             border-bottom: 1px solid #333;
             transition: all 0.3s;
         }
         
         nav ul li a:hover {
-            background: #222;
-            padding-left: 40px;
-            text-shadow: 0 0 10px var(--hacker-green);
+            background: #111;
+            padding-left: 45px;
+            text-shadow: 0 0 15px var(--hacker-green);
         }
         
         /* === CONTENIDO PRINCIPAL === */
         header {
             background: #000;
-            padding: 5rem 0;
+            padding: 6rem 0;
             text-align: center;
-            border-bottom: 3px solid var(--hacker-green);
+            border-bottom: 4px solid var(--hacker-green);
         }
         
         h1 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             color: var(--hacker-green);
-            text-shadow: 0 0 20px var(--hacker-green);
-            letter-spacing: 3px;
+            text-shadow: 0 0 25px var(--hacker-green);
+            letter-spacing: 5px;
+            animation: glitch 1s linear infinite;
+        }
+        
+        @keyframes glitch {
+            0%, 100% { text-shadow: 0 0 25px var(--hacker-green); }
+            25% { text-shadow: -8px -8px 25px #ff00ff, 8px 8px 25px #00ffff; }
+            50% { text-shadow: 10px 10px 25px #ff0000, -10px -10px 25px #0000ff; }
         }
         
         /* Galería (4 columnas) */
         .gallery {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 30px;
-            max-width: 1400px;
+            gap: 25px;
+            padding: 40px;
+            max-width: 1500px;
             margin: 0 auto;
         }
         
         .gallery-item {
-            border: 3px solid var(--hacker-green);
-            border-radius: 10px;
+            border: 4px solid var(--hacker-green);
+            border-radius: 15px;
             overflow: hidden;
             aspect-ratio: 1/1;
-            transition: all 0.3s;
-            box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+            transition: all 0.4s;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+            position: relative;
         }
         
         .gallery-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px var(--hacker-green);
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 0 40px var(--hacker-green);
         }
         
         .gallery img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.4s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
-    <!-- Pantalla de carga -->
+    <!-- === PANTALLA DE CARGA (¡CON LLUVIA DE CÓDIGO!) === -->
     <div class="loader" id="loader">
-        <div class="loader-text">CARGANDO SISTEMA</div>
-        <div class="binary-code">01001000 01000001 01000011 01001011 01000101 01001111</div>
+        <div class="loader-text">INICIANDO SISTEMA...</div>
+        <div class="binary-code" id="binaryCode">01001000 01000001 01000011 01001011 01000101 01001111</div>
     </div>
     
-    <!-- Fondo Matrix -->
+    <!-- === FONDO MATRIX === -->
     <canvas id="matrixCanvas" class="matrix-bg"></canvas>
     
-    <!-- Menú hamburguesa -->
+    <!-- === MENÚ HAMBURGUESA === -->
     <div class="hamburger" id="hamburger">
         <div></div>
         <div></div>
         <div></div>
     </div>
     
-    <!-- Menú desplegable -->
+    <!-- === MENÚ DESPLEGABLE === -->
     <nav id="navMenu">
         <ul>
             <li><a href="#inicio">INICIO</a></li>
-            <li><a href="#catalogo">CATÁLOGO</a></li>
-            <li><a href="#contacto">CONTACTO</a></li>
+            <li><a href="#catalogo">CATÁLOGO PRO</a></li>
+            <li><a href="#contacto">CONTACTO VIP</a></li>
             <li><a href="#secret">MODO DIOS</a></li>
         </ul>
     </nav>
     
-    <!-- Contenido principal -->
+    <!-- === CONTENIDO PRINCIPAL === -->
     <header id="inicio">
         <h1>DPCCREA</h1>
+        <p style="margin-top: 1rem; color: var(--hacker-green); font-size: 1.5rem;">// DISEÑO QUE EXPLOTA MENTES //</p>
     </header>
     
     <div class="gallery" id="catalogo">
-        <div class="gallery-item">
-            <img src="assets/imagenes/1.jpg" alt="Diseño 1">
+        <div class="gallery-item" onclick="window.location.href='producto1.html'">
+            <img src="assets/imagenes/1.jpg" alt="Diseño Épico 1">
         </div>
-        <div class="gallery-item">
-            <img src="assets/imagenes/2.jpg" alt="Diseño 2">
+        <div class="gallery-item" onclick="window.location.href='producto2.html'">
+            <img src="assets/imagenes/2.jpg" alt="Diseño Épico 2">
         </div>
-        <div class="gallery-item">
-            <img src="assets/imagenes/3.jpg" alt="Diseño 3">
+        <div class="gallery-item" onclick="window.location.href='producto3.html'">
+            <img src="assets/imagenes/3.jpg" alt="Diseño Épico 3">
         </div>
-        <div class="gallery-item">
-            <img src="assets/imagenes/4.jpg" alt="Diseño 4">
+        <div class="gallery-item" onclick="window.location.href='producto4.html'">
+            <img src="assets/imagenes/4.jpg" alt="Diseño Épico 4">
         </div>
     </div>
 
     <script>
-        // ===== PANTALLA DE CARGA =====
+        // ===== PANTALLA DE CARGA (¡MEJORADA!) =====
         const loader = document.getElementById('loader');
+        const binaryCode = document.getElementById('binaryCode');
         
-        // Ocultar después de 3 segundos
+        // Efecto de escritura
+        const hackerText = document.querySelector('.loader-text');
+        const fullText = "INICIANDO SISTEMA...";
+        let i = 0;
+        
+        function typeWriter() {
+            if (i < fullText.length) {
+                hackerText.textContent += fullText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        
+        // Código binario aleatorio
+        function generateBinary() {
+            let binary = '';
+            for (let i = 0; i < 10; i++) {
+                binary += Math.random().toString(2).substr(2, 8) + ' ';
+            }
+            binaryCode.textContent = binary;
+        }
+        
+        // Iniciar efectos
+        typeWriter();
+        setInterval(generateBinary, 150);
+        
+        // Ocultar después de 4 segundos
         setTimeout(() => {
             loader.style.opacity = '0';
             setTimeout(() => {
                 loader.style.display = 'none';
-            }, 500);
-        }, 3000);
+            }, 800);
+        }, 4000);
         
-        // ===== FONDO MATRIX =====
+        // ===== FONDO MATRIX (¡ULTRA RÁPIDO!) =====
         const canvas = document.getElementById('matrixCanvas');
         const ctx = canvas.getContext('2d');
         
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         
-        const chars = "日ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾁﾔﾖﾌﾝABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#$%&";
-        const fontSize = 18;
+        const chars = "日ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾁﾔﾖﾌﾝ★☆◆◇♠♣♥♦";
+        const fontSize = 20;
         const columns = canvas.width / fontSize;
         const drops = [];
         
@@ -257,27 +310,27 @@
         }
         
         function drawMatrix() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.06)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             
             ctx.fillStyle = '#00ff41';
-            ctx.font = `${fontSize}px monospace`;
+            ctx.font = `bold ${fontSize}px monospace`;
             
             for (let i = 0; i < drops.length; i++) {
                 const text = chars[Math.floor(Math.random() * chars.length)];
                 ctx.fillText(text, i * fontSize, drops[i] * fontSize);
                 
-                if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
+                if (drops[i] * fontSize > canvas.height || Math.random() > 0.97) {
                     drops[i] = 0;
                 }
                 
-                drops[i]++;
+                drops[i] += 1.5; // ¡Más rápido!
             }
         }
         
-        setInterval(drawMatrix, 50);
+        setInterval(drawMatrix, 40);
         
-        // ===== MENÚ HAMBURGUESA =====
+        // ===== MENÚ HAMBURGUESA (¡PERFECTO!) =====
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
         
@@ -285,15 +338,17 @@
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
             
-            // Animación a "X"
+            // Animación a "X" (mejorada)
             if (navMenu.classList.contains('active')) {
-                hamburger.children[0].style.transform = 'rotate(45deg) translate(7px, 7px)';
+                hamburger.children[0].style.transform = 'rotate(45deg) translate(8px, 8px)';
                 hamburger.children[1].style.opacity = '0';
-                hamburger.children[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+                hamburger.children[2].style.transform = 'rotate(-45deg) translate(8px, -8px)';
+                hamburger.style.transform = 'rotate(90deg)';
             } else {
                 hamburger.children[0].style.transform = 'none';
                 hamburger.children[1].style.opacity = '1';
                 hamburger.children[2].style.transform = 'none';
+                hamburger.style.transform = 'none';
             }
         });
     </script>
