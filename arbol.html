@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árbol de Sueños | HackerNutrición</title>
+    <style>
+        /* === ESTILOS HACKER (MEJORADOS) === */
+        :root {
+            --hacker-green: #00ff41;
+            --dark-color: #000;
+            --blood-red: #ff0033;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+        
+        body {
+            background-color: var(--dark-color);
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        /* === MARCO CON FOTO DE ÁRBOL (¡NUEVO!) === */
+        .tree-frame {
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto;
+            border: 4px dashed var(--hacker-green);
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s;
+        }
+        
+        .tree-frame:hover {
+            border-color: var(--blood-red);
+            box-shadow: 0 0 30px var(--blood-red);
+        }
+        
+        .tree-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: sepia(100%) hue-rotate(90deg);
+            transition: all 0.4s;
+        }
+        
+        .tree-frame:hover .tree-img {
+            filter: none;
+            transform: scale(1.02);
+        }
+        
+        .tree-caption {
+            position: absolute;
+            bottom: -25px;
+            right: 0;
+            background: var(--dark-color);
+            color: var(--hacker-green);
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border: 1px solid var(--hacker-green);
+        }
+        
+        /* === CONTENIDO BLOG === */
+        .blog-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            border-left: 3px solid var(--hacker-green);
+        }
+        
+        h1 {
+            color: var(--hacker-green);
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px var(--hacker-green);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--hacker-green), transparent);
+            bottom: -10px;
+            left: 0;
+        }
+        
+        h2 {
+            color: var(--hacker-green);
+            margin: 25px 0 15px;
+            font-size: 1.5rem;
+        }
+        
+        p, ul {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        li::before {
+            content: ">";
+            color: var(--hacker-green);
+            position: absolute;
+            left: -20px;
+        }
+        
+        /* === SECCIÓN INTERACTIVA (¡NUEVO!) === */
+        .interactive-section {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--hacker-green);
+            padding: 20px;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .interactive-section h3 {
+            color: var(--blood-red);
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        .recipe-form {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .recipe-form input, 
+        .recipe-form textarea {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--hacker-green);
+            color: white;
+            padding: 10px;
+            width: 100%;
+        }
+        
+        .recipe-form button {
+            background: var(--blood-red);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .recipe-form button:hover {
+            background: #ff0000;
+            box-shadow: 0 0 15px var(--blood-red);
+        }
+        
+        /* === CONTADOR DE VISITAS (¡NUEVO!) === */
+        .visitor-counter {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--dark-color);
+            border: 1px solid var(--hacker-green);
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            color: var(--hacker-green);
+        }
+    </style>
+</head>
+<body>
+    <!-- MARCO CON ÁRBOL (¡CLICKABLE!) -->
+    <div class="tree-frame" onclick="this.classList.toggle('zoomed')">
+        <img src="tu_arbol.jpg" alt="Árbol de sueños" class="tree-img">
+        <div class="tree-caption">CLICK PARA ZOOM</div>
+    </div>
+    
+    <!-- CONTENIDO BLOG -->
+    <div class="blog-container">
+        <h1>🌱 Árbol de sueños y raíces</h1>
+        <h2>¿Cómo influye nuestra alimentación en la formación de nuestra identidad?</h2>
+        
+        <h2>📌 Origen:</h2>
+        <p><strong>Publicidad de comida ultraprocesada:</strong> La publicidad dirigida a niños y adolescentes influye en sus decisiones alimenticias desde temprana edad. Este tipo de comida suele tener un alto contenido de azúcar, grasas y sodio, lo que puede afectar negativamente la salud física y mental.</p>
+        
+        <p><strong>Otros orígenes:</strong></p>
+        <ul>
+            <li>Falta de educación nutricional</li>
+            <li>Estrés y factores emocionales</li>
+            <li>Acceso limitado a alimentos saludables</li>
+        </ul>
+        
+        <h2>⚠ Consecuencias:</h2>
+        <p><strong>Mentales:</strong></p>
+        <ul>
+            <li>Déficit de nutrientes afecta funciones cognitivas</li>
+            <li>Dificultades de aprendizaje y memoria</li>
+            <li>Problemas emocionales y trastornos mentales</li>
+        </ul>
+        
+        <p><strong>Sociales:</strong></p>
+        <ul>
+            <li>Problemas de sobrepeso generan discriminación</li>
+            <li>Afecta la autoestima y las relaciones sociales</li>
+        </ul>
+        
+        <p><strong>Personales:</strong></p>
+        <ul>
+            <li>Lo que comes influye en tu concentración y estado de ánimo</li>
+            <li>Comer mal puede hacer que pienses más lento o te desconcentres</li>
+        </ul>
+        
+        <h2>✅ Alternativas de solución:</h2>
+        <ul>
+            <li>Educación nutricional en colegios</li>
+            <li>Fomentar la cocina casera</li>
+            <li>Regular la publicidad de comida chatarra</li>
+            <li>Promover el acceso a alimentos saludables</li>
+            <li>Promoción del bienestar físico y mental</li>
+        </ul>
+        
+        <p><em>Estas soluciones ayudan a construir una identidad más saludable, consciente y conectada con nuestras raíces culturales.</em></p>
+        
+        <!-- ZONA INTERACTIVA DE RECETAS (¡NUEVO!) -->
+        <div class="interactive-section">
+            <h3>🍲 ZONA DE RECETAS SALUDABLES</h3>
+            <form class="recipe-form">
+                <input type="text" placeholder="Nombre de tu receta" required>
+                <textarea placeholder="Ingredientes y preparación..." rows="5" required></textarea>
+                <input type="file" accept="image/*">
+                <button type="submit">COMPARTIR RECETA</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- CONTADOR DE VISITAS (¡NUEVO!) -->
+    <div class="visitor-counter">
+        👽 Visitantes: <span id="counter">1024</span>
+    </div>
+    
+    <script>
+        // === EFECTO ZOOM AL ÁRBOL ===
+        document.querySelector('.tree-frame').addEventListener('click', function() {
+            this.classList.toggle('zoomed');
+            if (this.classList.contains('zoomed')) {
+                this.style.position = 'fixed';
+                this.style.top = '50%';
+                this.style.left = '50%';
+                this.style.transform = 'translate(-50%, -50%) scale(1.8)';
+                this.style.zIndex = '1000';
+                this.style.backgroundColor = 'black';
+            } else {
+                this.style.position = 'relative';
+                this.style.top = 'auto';
+                this.style.left = 'auto';
+                this.style.transform = 'none';
+                this.style.zIndex = 'auto';
+                this.style.backgroundColor = 'transparent';
+            }
+        });
+        
+        // === CONTADOR DE VISITAS (ALEATORIO) ===
+        setInterval(() => {
+            const counter = document.getElementById('counter');
+            let visits = parseInt(counter.textContent);
+            visits += Math.floor(Math.random() * 3);
+            counter.textContent = visits;
+        }, 5000);
+        
+        // === EFECTO TYPING EN TÍTULO ===
+        const title = document.querySelector('h1');
+        const originalText = title.textContent;
+        title.textContent = '';
+        
+        let charIndex = 0;
+        function typeTitle() {
+            if (charIndex < originalText.length) {
+                title.textContent += originalText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeTitle, 100);
+            }
+        }
+        
+        setTimeout(typeTitle, 1000);
+    </script>
+</body>
+</html>
